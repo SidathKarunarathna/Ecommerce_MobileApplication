@@ -1,10 +1,11 @@
-import { Text,View } from 'native-base'
-import React from 'react'
+import { Text, View } from "native-base";
+import React from "react";
 
-export default function HomeScreen() {
+function ProfileScreen() {
   return (
     <View>
-        <Text>ProfileScreen</Text>
+      <Text>ProfileScreen</Text>
     </View>
-  )
+  );
 }
+export default ProfileScreen;

@@ -1,10 +1,11 @@
-import { Text,View } from 'native-base'
-import React from 'react'
+import { Text, View } from "native-base";
+import React from "react";
 
-export default function HomeScreen() {
+function PlaceOrderScreen() {
   return (
     <View>
-        <Text>PlaceOrderScreen</Text>
+      <Text>PlaceOrderScreen</Text>
     </View>
-  )
+  );
 }
+export default PlaceOrderScreen;
