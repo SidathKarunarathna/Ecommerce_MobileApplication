@@ -8,6 +8,8 @@ export default function HomeScreen() {
   return (
     <View>
         <Text>CartScreen</Text>
+        <Text>CartScreen</Text>
+        <Text>CartScreen</Text>
     </View>
   )
 }
