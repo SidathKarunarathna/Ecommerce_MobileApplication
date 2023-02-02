@@ -1,10 +1,11 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import React from "react";
+import { Text, View } from "react-native";
 
-export default function RegisterScreen() {
+function RegisterScreen() {
   return (
     <View>
-        <Text>RegisterScreen</Text>
+      <Text>RegisterScreen</Text>
     </View>
-  )
+  );
 }
+export default RegisterScreen;
