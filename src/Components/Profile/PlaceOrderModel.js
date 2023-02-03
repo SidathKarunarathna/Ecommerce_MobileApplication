@@ -66,7 +66,7 @@ const PlaceOrderModel = () => {
                                 fontWeight="medium" 
                                 color={i.color==="main"? Colors.main:Colors.black}
                                 >
-                                    Rs.{i.Price}
+                                    Rs.{i.Price.toFixed(2)}
                                     </Text>
                             </HStack>
                         ))}
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 5,
         justifyContent: "center",
-        marginTop:200
+        marginTop:100
        
 
     },
