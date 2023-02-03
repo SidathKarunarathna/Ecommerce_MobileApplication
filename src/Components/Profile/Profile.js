@@ -60,7 +60,7 @@ const Profile = () => {
             </FormControl>
           ))}
 
-          <Button bg={Colors.main} color={Colors.white} borderRadius={50}>
+          <Button bg={Colors.main} color={Colors.white} borderRadius={100}>
             UPDATE PROFILE
           </Button>
         </VStack>
