@@ -1,4 +1,4 @@
-import { Center, Icon, Image, Text, View } from "native-base";
+import { Center, Heading, Icon, Image, Text, View } from "native-base";
 import React from "react";
 import Colors from "../color";
 
@@ -13,6 +13,12 @@ function ProfileScreen() {
           h={24}
           resizeMode="cover"
         />
+        <Heading bold fontSize={15} isTruncated my={2} color={Colors.white}>
+          Admin Doe
+        </Heading>
+        <Text italic fontSize={10} color={Colors.white}>
+          Joined Dec 12 2022
+        </Text>
       </Center>
     </>
   );
