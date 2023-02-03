@@ -1,28 +1,59 @@
-import { View, Text, useWindowDimensions } from "react-native";
+import { View, Text, useWindowDimensions, StyleSheet } from "react-native";
 import React, { useState } from "react";
-import { SceneMap, ScreenMap } from "react-native-tab-view";
+import { SceneMap, ScreenMap, TabBar, TabView } from "react-native-tab-view";
+import Profile from "./Profile";
+import Orders from "./Orders";
+import Colors from "../../color";
 
 const renderScene = SceneMap({
   first: Profile,
-  second: Order,
+  second: Orders,
 });
 
 export default function Tabs() {
   const layout = useWindowDimensions();
-  const [index, serIndex] = useState(0);
+  const [index, setIndex] = useState(0);
   const [routes] = useState([
     {
       key: "first",
       title: "PROFILE",
     },
     {
-      key: "seconf",
+      key: "second",
       title: "ORDERS",
     },
   ]);
+
+  const renderTabsBar = (props) => (
+    <TabBar
+      {...props}
+      tabStyle={styles.tabStyle}
+      indicatorStyle={{ backgroundColor: Colors.black }}
+      activeColor={Colors.main}
+      inactiveColor={Colors.white}
+      renderLabel={({ route, color }) => (
+        <Text style={{ color, ...styles.text }}>{route.title}</Text>
+      )}
+    />
+  );
+
   return (
-    <View>
-      <Text>Tabs</Text>
-    </View>
+    <TabView
+      navigationState={{ index, routes }}
+      renderScene={renderScene}
+      onIndexChange={setIndex}
+      initialLayout={{ width: layout.width }}
+      renderTabBar={renderTabsBar}
+    />
   );
 }
+const styles = StyleSheet.create({
+  tabStyle: {
+    backgroundColor: "black",
+  },
+
+  text: {
+    fontSize: 13,
+    fontWeight: "bold",
+  },
+});
