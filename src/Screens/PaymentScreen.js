@@ -1,10 +1,11 @@
-import { Text,View } from 'native-base'
-import React from 'react'
+import { Text, View } from "native-base";
+import React from "react";
 
-export default function HomeScreen() {
+function PaymentScreen() {
   return (
     <View>
-        <Text>PaymentScreen</Text>
+      <Text>PaymentScreen</Text>
     </View>
-  )
+  );
 }
+export default PaymentScreen;
