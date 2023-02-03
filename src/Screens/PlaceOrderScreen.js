@@ -1,8 +1,10 @@
-import { Box, ScrollView, Text, View } from "native-base";
+import { Box, Heading, ScrollView, Text, View } from "native-base";
 import React from "react";
 import Colors from "../color";
-import OrderInfo from "../Components/OrderInfo";
+import OrderInfo from "../Components/Profile/OrderInfo";
 import {FontAwesome,FontAwesome5,Ionicons} from '@expo/vector-icons'
+import OrderItem from "../Components/Profile/OrderItems";
+import PlaceOrderModel from "../Components/Profile/PlaceOrderModel";
 
 function PlaceOrderScreen() {
   return (
@@ -36,7 +38,15 @@ function PlaceOrderScreen() {
         </ScrollView>
       </Box>
       <Box px={6} flex={1} pb={3}>
-
+            <Heading 
+            bold
+            fontSize={15} 
+            isTruncated
+            my={4}>
+              PRODUCTS
+            </Heading>
+            <OrderItem/>
+            <PlaceOrderModel/>
       </Box>
     </Box>
   );

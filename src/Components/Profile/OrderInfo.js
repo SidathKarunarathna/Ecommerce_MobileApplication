@@ -1,5 +1,5 @@
 import React from 'react'
-import Colors from '../color';
+import Colors from '../../color';
 import { Center, Heading, Text  } from 'native-base';
 
 const OrderInfo = ({ icon, title, subTitle, text, success, danger }) => {
