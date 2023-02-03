@@ -15,6 +15,8 @@ const Orders = () => {
             bg={Colors.deepGray}
             py={5}
             px={2}
+            marginBottom={1}
+            paddingLeft={2}
           >
             <Text fontSize={9} color={Colors.blue} isTruncated>
               154515155454
@@ -42,30 +44,31 @@ const Orders = () => {
             space={4}
             justifyContent="space-between"
             alignItems="center"
-            bg={Colors.deepGray}
+            bg={Colors.wk}
             py={5}
             px={2}
+            paddingLeft={2}
           >
             <Text fontSize={9} color={Colors.blue} isTruncated>
               154515155454
             </Text>
             <Text fontSize={12} Bold color={Colors.black} isTruncated>
-              PAID
+              NOT PAID
             </Text>
             <Text fontSize={11} italic color={Colors.black} isTruncated>
-              Dec 12 2022
+              Aug 22 2022
             </Text>
             <Button
               px={7}
               py={1.5}
               rounded={50}
-              bg={Colors.main}
+              bg={Colors.red}
               _text={{ color: Colors.white }}
               _pressed={{
                 bg: Colors.main,
               }}
             >
-              Rs.500
+              Rs.1500
             </Button>
           </HStack>
         </Pressable>
