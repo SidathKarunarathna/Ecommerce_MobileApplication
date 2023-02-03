@@ -1,6 +1,5 @@
-import { Box, Flex, Heading, Image, ScrollView, Text } from "native-base";
+import { Box, Flex, Heading, Image, ScrollView, Text,Pressable } from "native-base";
 import React from "react";
-import { Pressable } from "react-native";
 import Colors from "../../color";
 import products from "../../data/products"
 import Rating from "../Home/Rating";
@@ -14,9 +13,10 @@ function HomeProducts() {
         justifyContent="space-between"
         px={6}
       >
-        {products.map((product) => {
+        {products.map((product,index) => {
+          return(
           <Pressable
-            key={product._id}
+            key={index}
             w="47%"
             bg={Colors.white}
             rounded="md"
@@ -26,16 +26,15 @@ function HomeProducts() {
             pb={2}
             overflow="hidden"
           >
-            ;
-            {
+            
               <Image
-                source={{ uri: product.image }}
+                source={product.image}
                 alt={product.name}
                 w="full"
                 h={24}
                 resizeMode="contain"
               />
-            }
+            
             <Box px={4} pt={1}>
               <Heading size="sm" bold>
                 Rs.{product.price}
@@ -46,8 +45,8 @@ function HomeProducts() {
               {/* rating */}
               <Rating value={product.rating} />
             </Box>
-          </Pressable>;
-        })}
+          </Pressable>
+        );})}
       </Flex>
     </ScrollView>
   );
