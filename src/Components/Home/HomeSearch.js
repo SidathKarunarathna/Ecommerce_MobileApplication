@@ -2,7 +2,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { Box, HStack, Input } from "native-base";
 import React from "react";
 import { Pressable } from "react-native";
-import Colors from "../color";
+import Colors from "../../color";
 
 function HomeSearch() {
   return (

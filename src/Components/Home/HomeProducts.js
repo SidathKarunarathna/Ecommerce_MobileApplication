@@ -1,9 +1,9 @@
 import { Box, Flex, Heading, Image, ScrollView, Text } from "native-base";
 import React from "react";
 import { Pressable } from "react-native";
-import Colors from "../color";
-import products from "../data/Products";
-import Rating from "./Rating";
+import Colors from "../../color";
+import products from "../../data/Products";
+import Rating from "../Home/Rating";
 
 function HomeProducts() {
   return (
