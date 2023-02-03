@@ -46,6 +46,7 @@ function SingleProductScreen() {
             iconStyle={{ color: Colors.white }}
             rightButtonBackgroundColor={Colors.main}
             leftButtonBackgroundColor={Colors.main}
+            onChange={(e) => setValue(e)}
           />
           <Spacer />
           <Heading bold color={Colors.black} fontSize={19}>
