@@ -13,6 +13,8 @@ import React, { useState } from "react";
 import Colors from "../color";
 import NumericInput from "react-native-numeric-input";
 import Review from "../Components/Products/Review";
+import Buttone from "../Components/Profile/Buttone";
+import Rating from "../Components/Home/Rating";
 // import Rating from "../Components/Home/Rating";
 
 function SingleProductScreen() {
@@ -30,7 +32,7 @@ function SingleProductScreen() {
         <Heading bold fontSize={15} mb={2} lineHeight={22}>
           White Sugar
         </Heading>
-        {/* <Rating value={4} /> */}
+        <Rating value={4} />
         <HStack space={2} alignItems="center" my={5}>
           <NumericInput
             value={value}
@@ -63,9 +65,9 @@ function SingleProductScreen() {
           use the Psiphon to run a proxy by changing the setting shown in the
           image:
         </Text>
-        <Button bg={Colors.main} color={Colors.white} mt={10}>
+        <Buttone bg={Colors.main} color={Colors.white} mt={10}>
           Add To Cart
-        </Button>
+        </Buttone>
         {/* review */}
         <Review />
       </ScrollView>
