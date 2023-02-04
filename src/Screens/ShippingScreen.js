@@ -34,20 +34,23 @@ function ShippingScreen() {
       <Box h='full' bg={Colors.white} px={5}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <VStack space={6} mt={5}>
-            
-            <FormControl>
+
+            {ShippingInputs.map((i,index)=>(
+              <FormControl key={index}>
               <FormControl.Label 
               _text={{
                 fontSize:'12px',
                 fontWeight:'bold',
 
-              }}>ENTER CITY
+              }}>
+                {i.lable}
               </FormControl.Label>
               <Input 
               borderWidth={0.2}
               borderColor={Colors.main}
               bg={Colors.subGreen}
               py={4}
+              type={i.type}
               color={Colors.main}
               _focus={{
                 bg:Colors.subGreen,
@@ -55,6 +58,12 @@ function ShippingScreen() {
                 borderColor:Colors.main,
               }}/>
             </FormControl>
+            ))}
+
+            <Buttone bg={Colors.main} color={Colors.white} mt={5}>
+              CONTINUE
+            </Buttone>
+            
 
           </VStack>
         </ScrollView>
