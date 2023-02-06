@@ -1,8 +1,8 @@
-import { Center, Button, VStack, HStack, Text } from "native-base";
+import { Center, Button, VStack, HStack, Text , Pressable, Image } from "native-base";
 import React, { useState } from "react"
 import Colors from "../../color";
 import Buttone from "./Buttone";
-import { Modal, View, StyleSheet, Pressable } from "react-native";
+import { Modal, View, StyleSheet} from "react-native";
 import { AntDesign } from '@expo/vector-icons'
 
 
@@ -28,18 +28,18 @@ const OrdersInfos=[
         color:'main'
     },
 ]
-const PlaceOrderModel = () => {
+const OrderModel = () => {
     const [showModel, setShowModel] = useState(false);
     return (
         <Center>
             <Buttone
                 onPress={() => setShowModel(true)}
-                bg={Colors.black}
+                bg={Colors.main}
                 color={Colors.white}
                 mt={5}
                 rounded={30}
             >
-                SHOW TOTAL
+                SHOW PAYMENT & TOTAL
             </Buttone>
             <Modal
                 animationType="slide"
@@ -71,9 +71,26 @@ const PlaceOrderModel = () => {
                             </HStack>
                         ))}
                     </VStack>
-                    <Button 
-                    bg={Colors.main}
+                    <Pressable 
+                    w="full"
+                    justifyContent="center"
+                    bg={Colors.paypal}
                     h={45}
+                    rounded={3}
+                    overflow="hidden"
+                    onPress={()=>setShowModel(false)}>
+                        <Image
+                        source={require("../../../assets/Images/paypal.png")}
+                        alt="paypal"
+                        resizeMode="contain"
+                        w="full"
+                        h={34}/>
+                    </Pressable>
+                    <Button 
+                    bg={Colors.black}
+                    h={45}
+                    mt={2}
+                    w="full"
                     _text={{color:Colors.white}}
                     onPress={()=> setShowModel(false)}
                     _pressed={{bg:Colors.main}}
@@ -129,4 +146,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default PlaceOrderModel;
+export default OrderModel;

@@ -10,7 +10,7 @@ import NotVerifyScreen from "./src/Screens/NotVerifyScreen";
 export default function App() {
   return (
     <NativeBaseProvider>
-      <NotVerifyScreen />
+      <OrderScreen />
     </NativeBaseProvider>
   );
 }
