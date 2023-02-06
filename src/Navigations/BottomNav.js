@@ -4,11 +4,23 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from "../Screens/HomeScreen"
 import ProfileScreen from "../Screens/ProfileScreen"
 import CartScreen from "../Screens/CartScreen"
-import { Center } from "native-base";
+import { Center, Pressable } from "native-base";
 import { AntDesign, Entypo, FontAwesome, FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
 import Colors from "../color";
 const Tab = createBottomTabNavigator()
-const customTab= ({children,onPress})=>(<Text>hh</Text>)
+const CustomTab= ({children,onPress})=>(
+    <Pressable
+    onPress={onPress} 
+    h={70} 
+    w={70} 
+    _pressed={{bg:Colors.black}}
+    rounded="full" 
+    bg={Colors.main}
+    top={-30}
+    shadow={2}>
+        {children}
+    </Pressable>
+)
 
 const BottomNav = ()=>{
     return(
@@ -28,11 +40,12 @@ const BottomNav = ()=>{
                 )
             }}/>
             <Tab.Screen name="Cart" component={CartScreen} options={{
+                tabBarButton:(props)=><CustomTab {...props}/>,
                 tabBarIcon:({focused})=>(
                     <Center>
                         {focused ?(
-                            <FontAwesome5 name="shopping-basket" size={24} color={Colors.main}/>
-                        ):(<MaterialCommunityIcons name="shopping-outline" size={24} color={Colors.black}/>)}
+                            <FontAwesome5 name="shopping-basket" size={24} color={Colors.white}/>
+                        ):(<MaterialCommunityIcons name="shopping-outline" size={24} color={Colors.white}/>)}
                     </Center>
                 )
             }}/>
