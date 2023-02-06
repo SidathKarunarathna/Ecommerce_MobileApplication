@@ -26,13 +26,13 @@ export default function Review() {
       {/* empty review */}
       <Message
         color={Colors.main}
-        bg={Colors.deepGray}
+        bg={Colors.subGreen}
         // size={10}
         bold
         children={"No Review"}
       />
       {/* has review */}
-      <Box p={3} bg={Colors.deepGray} mt={5} rounded={5}>
+      <Box p={3} bg={Colors.subGreen} mt={5} rounded={5}>
         <Heading fontSize={15} color={Colors.black}>
           Kosala Chamithri
         </Heading>
