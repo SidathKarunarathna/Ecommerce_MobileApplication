@@ -1,5 +1,27 @@
-import { Text, View } from "native-base";
 import React from "react";
+import { Box,Center,FormControl,ScrollView,Text, VStack} from "native-base";
+import Colors from "../color";
+
+
+const ShippingInputs=[
+  {
+    lable:"ENTER CITY",
+    type:"text"
+  },
+  {
+    lable:"ENTER COUNTRY",
+    type:"text"
+  },
+  {
+    lable:"ENTER POSTAL CODE",
+    type:"text"
+  },
+  {
+    lable:"ENTER ADDRESS",
+    type:"text"
+  },
+]
+
 
 function ShippingScreen() {
   return (
