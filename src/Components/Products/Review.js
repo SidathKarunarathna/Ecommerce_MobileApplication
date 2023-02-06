@@ -55,15 +55,14 @@ export default function Review() {
           REVIEW THIS PRODUCT
         </Heading>
         <VStack space={6}>
-          {/* <FormControl>
-            <FormControl.Label
+            <Text
               _text={{
                 fontSize: "12px",
                 fontWeight: "bold",
               }}
             >
               Rating
-            </FormControl.Label>
+            </Text>
             <Select
               bg={Colors.subGreen}
               borderWidth={0}
@@ -81,16 +80,14 @@ export default function Review() {
               <Select.Item label="Fair" value="2" />
               <Select.Item label="Good" value="3" />
             </Select>
-          </FormControl> */}
-          {/* <FormControl>
-            <FormControl.Label
+            <Text
               _text={{
                 fontSize: "12px",
                 fontWeight: "bold",
               }}
             >
               Comment
-            </FormControl.Label>
+            </Text>
             <TextArea
               h={24}
               w="full"
@@ -102,8 +99,7 @@ export default function Review() {
                 bg: Colors.subGreen,
               }}
             />
-          </FormControl> */}
-          <Buttone bg={Colors.main} color={Colors.white}>
+          <Buttone bg={Colors.main} color={Colors.white}> 
             SUBMIT
           </Buttone>
           {/* if not logged in */}
