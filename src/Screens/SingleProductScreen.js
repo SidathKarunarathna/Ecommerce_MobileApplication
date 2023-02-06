@@ -15,32 +15,36 @@ import NumericInput from "react-native-numeric-input";
 import Review from "../Components/Products/Review";
 import Buttone from "../Components/Profile/Buttone";
 import Rating from "../Components/Home/Rating";
+import { useNavigation } from "@react-navigation/native";
 // import Rating from "../Components/Home/Rating";
 
-function SingleProductScreen() {
+function SingleProductScreen({route}) {
   const [value, setValue] = useState(0);
+  const navigation = useNavigation()
+  const product = route.params
   return (
     <Box safeArea flex={1} bg={Colors.white}>
       <ScrollView px={5} showsVerticalScrollIndicator={false}>
         <Image
-          source={require("../../assets/Images/WhiteSugar.jpg")}
+          source={product.image}
           alt="Image"
           w="full"
           h={300}
           resizeMode="contain"
         />
         <Heading bold fontSize={15} mb={2} lineHeight={22}>
-          White Sugar
+          {product.name}
         </Heading>
-        <Rating value={4} />
+        <Rating value={product.rating} text={`${product.numReviews} reviews`} />
         <HStack space={2} alignItems="center" my={5}>
-          <NumericInput
+          {product.countInStock>0 ? (
+            <NumericInput
             value={value}
             totalWidth={140}
             totalHeight={30}
             iconSize={25}
             step={1}
-            maxValue={10}
+            maxValue={product.countInStock}
             minValue={0}
             borderColor={Colors.deepGray}
             rounded
@@ -50,22 +54,19 @@ function SingleProductScreen() {
             leftButtonBackgroundColor={Colors.main}
             onChange={(e) => setValue(e)}
           />
+          ):( <Heading bold color={Colors.red} italic fontSize={10}>
+            Out of Stock
+          </Heading>)}
+         
           <Spacer />
           <Heading bold color={Colors.black} fontSize={19}>
-            Rs.500
+            Rs.{product.price}
           </Heading>
         </HStack>
         <Text lineHeight={24} fontSize={13}>
-          In the case of the Iran SSL ban, it is possible to run a proxy on the
-          arbitrary free port on your localhost and then reconfigure the git
-          proxy setting. For example, I use the Psiphon to run a proxy by
-          changing the setting shown in the image: In the case of the Iran SSL
-          ban, it is possible to run a proxy on the arbitrary free port on your
-          localhost and then reconfigure the git proxy setting. For example, I
-          use the Psiphon to run a proxy by changing the setting shown in the
-          image:
+         {product.description}
         </Text>
-        <Buttone bg={Colors.main} color={Colors.white} mt={10}>
+        <Buttone onPress={()=> navigation.navigate("Cart")} bg={Colors.main} color={Colors.white} mt={10}>
           Add To Cart
         </Buttone>
         {/* review */}
