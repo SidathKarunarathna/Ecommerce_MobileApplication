@@ -14,6 +14,7 @@ function CartScreen() {
           Cart
         </Text>
       </Center>
+      {/* <CartEmpty/> */}
       <ScrollView showsVerticalScrollIndicator={false}></ScrollView>
     </Box>
   );
