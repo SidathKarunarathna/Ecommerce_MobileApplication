@@ -82,7 +82,7 @@ export default function Review() {
               <Select.Item label="Good" value="3" />
             </Select>
           </FormControl> */}
-          <FormControl>
+          {/* <FormControl>
             <FormControl.Label
               _text={{
                 fontSize: "12px",
@@ -102,7 +102,7 @@ export default function Review() {
                 bg: Colors.subGreen,
               }}
             />
-          </FormControl>
+          </FormControl> */}
           <Buttone bg={Colors.main} color={Colors.white}>
             SUBMIT
           </Buttone>

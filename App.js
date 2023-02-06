@@ -1,16 +1,24 @@
-import { StatusBar } from "expo-status-bar";
-import { Box, NativeBaseProvider, Text } from "native-base";
-// import SingleProductScreen from "./src/Screens/SingleProductScreen";
-// import HomeScreen from "./src/Screens/HomeScreen";
-// import LoginScreen from "./src/Screens/LoginScreen";
-// import PlaceOrderScreen from "./src/Screens/PlaceOrderScreen";
-import ProfileScreen from "./src/Screens/ProfileScreen";
-import NotVerifyScreen from "./src/Screens/NotVerifyScreen";
+import { Box, NativeBaseProvider,StatusBar} from "native-base";
+import LoginScreen from "./src/Screens/LoginScreen";
+import OrderScreen from "./src/Screens/OrderScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import RegisterScreen from "./src/Screens/RegisterScreen"
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NativeBaseProvider>
-      <OrderScreen />
+      <NavigationContainer>
+        <StatusBar hidden={true}/>
+        <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown:false}}>
+          <Stack.Screen name="Login" component={LoginScreen}/>
+          <Stack.Screen name="Register" component={RegisterScreen}/>
+          <Stack.Screen name="Order" component={OrderScreen}/>
+          <Stack.Screen name="Bottom" component={LoginScreen}/>
+        </Stack.Navigator>
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 }
