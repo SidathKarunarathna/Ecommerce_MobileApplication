@@ -14,7 +14,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { Pressable } from "react-native";
 
-function RegisterScreen() {
+function RegisterScreen({navigation}) {
   return (
     <Box flex={1} bg={Colors.black}>
       <Image
@@ -84,10 +84,11 @@ function RegisterScreen() {
           w="40%"
           rounded={50}
           bg={Colors.main}
+          onPress={()=> navigation.navigate("Bottom")}
         >
           SIGN UP
         </Button>
-        <Pressable mt={4}>
+        <Pressable mt={4}  onPress={()=> navigation.navigate("Login")}>
           <Text color={Colors.deepestGray}>LOGIN</Text>
         </Pressable>
       </Box>

@@ -13,7 +13,7 @@ export default function App() {
     <NativeBaseProvider>
       <NavigationContainer>
         {/* <StatusBar hidden={true}/> */}
-        <Stack.Navigator initialRouteName="Bottom" screenOptions={{headerShown:false}}>
+        <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown:false}}>
           <Stack.Screen name="Login" component={LoginScreen}/>
           <Stack.Screen name="Register" component={RegisterScreen}/>
           <Stack.Screen name="Order" component={OrderScreen}/>
