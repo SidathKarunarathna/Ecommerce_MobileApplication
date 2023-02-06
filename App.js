@@ -5,11 +5,12 @@ import { Box, NativeBaseProvider, Text } from "native-base";
 // import LoginScreen from "./src/Screens/LoginScreen";
 // import PlaceOrderScreen from "./src/Screens/PlaceOrderScreen";
 import ProfileScreen from "./src/Screens/ProfileScreen";
+import NotVerifyScreen from "./src/Screens/NotVerifyScreen";
 
 export default function App() {
   return (
     <NativeBaseProvider>
-      <ProfileScreen />
+      <OrderScreen />
     </NativeBaseProvider>
   );
 }

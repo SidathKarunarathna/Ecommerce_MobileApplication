@@ -12,6 +12,7 @@ import {
 } from "native-base";
 import Colors from "../../color";
 import Message from "../Notifications/Message";
+import Buttone from "../Profile/Buttone";
 // import Rating from "../Home/Rating";
 
 export default function Review() {
@@ -54,7 +55,7 @@ export default function Review() {
           REVIEW THIS PRODUCT
         </Heading>
         <VStack space={6}>
-          <FormControl>
+          {/* <FormControl>
             <FormControl.Label
               _text={{
                 fontSize: "12px",
@@ -69,18 +70,18 @@ export default function Review() {
               rounded={5}
               py={4}
               placeholder="Choose Rating"
+              selectedValue={ratings}
+              onValueChange={(value) => setRatings(value)}
               _selectedItem={{
                 bg: Colors.subGreen,
                 endIcon: <CheckIcon size={3} />,
               }}
-              selectedValue={ratings}
-              onValueChange={(e) => setRatings(e)}
             >
-              <Select.Item label="1- Poor" value="1" />
-              <Select.Item label="2- Fair" value="2" />
-              <Select.Item label="3- Good" value="3" />
+              <Select.Item label="Poor" value="1" />
+              <Select.Item label="Fair" value="2" />
+              <Select.Item label="Good" value="3" />
             </Select>
-          </FormControl>
+          </FormControl> */}
           <FormControl>
             <FormControl.Label
               _text={{
@@ -102,12 +103,12 @@ export default function Review() {
               }}
             />
           </FormControl>
-          <Button bg={Colors.main} color={Colors.white}>
+          <Buttone bg={Colors.main} color={Colors.white}>
             SUBMIT
-          </Button>
+          </Buttone>
           {/* if not logged in */}
           <Message
-            color={Colors.black}
+            color={Colors.white}
             bg={Colors.black}
             children={"Please 'Login' to write a review"}
           />
