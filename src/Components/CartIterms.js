@@ -9,12 +9,12 @@ import products from '../data/Products';
 const Swiper = () =>(
 <SwipeListView
 rightOpenValue={-50}
-previewRowKey={0}
+previewRowKey="0"
 previewOpenValue={-40}
 previewOpenDelay={3000}
 data={products.slice(0,2)}
-renderHiddenItem={}
-renderItems={renderIterms}
+renderHiddenItem={hiddenItem}
+renderItems={renderitem}
 showsVerticalScrollIndicator={false}/>
 )
 
@@ -49,7 +49,14 @@ const renderitem = (data) => (
              </Text>
           </VStack> 
           <Center>
-            <Button></Button>
+            <Button
+               bg={Colors.main}
+               _pressed={{bg:Colors.main}}
+               _text={{
+                color:Colors.white,
+               }}>
+                5
+               </Button>
           </Center>
       </HStack> 
     </Box> 
@@ -58,6 +65,21 @@ const renderitem = (data) => (
 );
 
 
+const hiddenItem = () => (
+<Pressable 
+w={50} 
+roundedTopRight={10} 
+roundedBottomRight={10} 
+h="88%" 
+ml="auto" 
+justifyContent="center" 
+bg={Colors. red} >
+
+<Center alignItems="center" space={2}> 
+<FontAwesome name="trash" size={24} color={Colors.white} /> 
+</Center> 
+</Pressable> 
+); 
 
 
 
@@ -68,7 +90,7 @@ const renderitem = (data) => (
 const CartIterms = () => {
     return(
         <Box mr={6}>
-            <Text>CartIterms</Text>
+            <Swiper/>
         </Box>
     )
 }
