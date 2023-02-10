@@ -1,7 +1,7 @@
 import { FontAwesome } from "@expo/vector-icons";
 import { HStack, Text } from "native-base";
 import React from "react";
-import Colors from "../color";
+import Colors from "../../color";
 
 function Rating({ value, text }) {
   const size = 8;

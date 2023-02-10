@@ -1,13 +1,13 @@
 import { Box, Flex, Heading, Image, ScrollView, Text } from "native-base";
 import React from "react";
 import { Pressable } from "react-native";
-import Colors from "../color";
-import products from "../data/products";
-import Rating from "./Rating";
+import Colors from "../../color";
+import products from "../../data/products";
+import Rating from "../Home/Rating";
 
 function HomeProducts() {
   return (
-    <ScrollView flex={1}>
+    <ScrollView flex={1} showsVerticalScrollIndicator={false}>
       <Flex
         flexWrap="wrap"
         direction="row"
@@ -18,7 +18,7 @@ function HomeProducts() {
           <Pressable
             key={product._id}
             w="47%"
-            bg={Colors.black}
+            bg={Colors.white}
             rounded="md"
             shadow={2}
             pt={0}
@@ -44,7 +44,7 @@ function HomeProducts() {
                 {product.name}
               </Text>
               {/* rating */}
-              <Rating value={product.rating} text={product.numReviews} />
+              <Rating value={product.rating} />
             </Box>
           </Pressable>;
         })}
