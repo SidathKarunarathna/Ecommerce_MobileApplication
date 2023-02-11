@@ -1,9 +1,8 @@
-import { Text, View } from "native-base";
 import React from "react";
 import { Box,Center,FormControl,ScrollView,Text, VStack} from "native-base";
 import Colors from "../color";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
-import Buttone from "../Components/Buttone";
+import Buttone from "../Components/Profile/Buttone";
 
 
 
