@@ -49,7 +49,7 @@ export const getProducts = async (req, res) => {
 export const getOneProduct = async (req, res) => {
   const { productId } = req.body;
   try {
-    const product = await Product.find({ _id: productId });
+    const product = await Product.findById(productId);
 
     res.status(200).json({
       message: "success",

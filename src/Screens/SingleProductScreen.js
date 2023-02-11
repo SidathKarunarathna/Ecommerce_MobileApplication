@@ -9,7 +9,7 @@ import {
   Text,
   View,
 } from "native-base";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Colors from "../color";
 import NumericInput from "react-native-numeric-input";
 import Review from "../Components/Products/Review";
@@ -22,31 +22,52 @@ function SingleProductScreen({route}) {
   const [value, setValue] = useState(0);
   const navigation = useNavigation()
   const product = route.params
+  const productId= product._id;
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
 
-  
+  useEffect(()=>{
+    fetch("http://192.168.8.198:5000/product/getOneProduct",{
+      method:"POST",
+      headers:{
+        "Content-type":"application/json"
+      },
+      body:JSON.stringify({productId})
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data.products);
+      })
+      .catch((e) => {
+        console.log(e)
+        setError(e);
+      })
+      .finally(() => {
+      });
+  },[])
   return (
     <Box safeArea flex={1} bg={Colors.white}>
       <ScrollView px={5} showsVerticalScrollIndicator={false}>
         <Image
-          source={product.image}
+          source={{uri:products.image}}
           alt="Image"
           w="full"
           h={300}
           resizeMode="contain"
         />
         <Heading bold fontSize={15} mb={2} lineHeight={22}>
-          {product.name}
+          {products.name}
         </Heading>
-        <Rating value={product.rating} text={`${product.numReviews} reviews`} />
+        <Rating value={products.rating} text={`${products.numReviews} reviews`} />
         <HStack space={2} alignItems="center" my={5}>
-          {product.countInStock>0 ? (
+          {products.countInStock>0 ? (
             <NumericInput
             value={value}
             totalWidth={140}
             totalHeight={30}
             iconSize={25}
             step={1}
-            maxValue={product.countInStock}
+            maxValue={products.countInStock}
             minValue={0}
             borderColor={Colors.deepGray}
             rounded
@@ -62,11 +83,11 @@ function SingleProductScreen({route}) {
          
           <Spacer />
           <Heading bold color={Colors.black} fontSize={19}>
-            Rs.{product.price}
+            Rs.{products.price}
           </Heading>
         </HStack>
         <Text lineHeight={24} fontSize={13}>
-         {product.description}
+         {products.description}
         </Text>
         <Buttone onPress={()=> navigation.navigate("Cart")} bg={Colors.main} color={Colors.white} mt={10}>
           Add To Cart
