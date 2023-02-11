@@ -22,25 +22,17 @@ const products = [
   },
   {
     name: "Munchee Chocolate Wafers",
-    image: "../../assets/Images/chocloateWafers_munchee.jpg",
+    image: "https://i.ibb.co/0MBBkY1/chocolate-Wafers-munchee.jpg",
     description:
       "400g Munchee Cholcolate Wafers are in a sweet taste to provide you with the taste of chocolate and thin biscuit layer",
     price: 400,
     countInStock: 15,
     rating: 3,
     numReviews: 6,
-  },{
-    name: "Brown Sugar",
-    image: "../../assets/Images/BrownSugar.png",
-    description: "Lorem Ipsum....",
-    price: 700,
-    countInStock: 5,
-    rating: 4,
-    numReviews: 10,
   },
   {
     name: "Munchee Super Cream Cracker",
-    image: "../../assets/Images/CreamCracker.jpeg",
+    image: "https://i.ibb.co/yswT8vp/Cream-Cracker.jpg",
     description: "Lorem Ipsum....",
     price: 480,
     countInStock: 0,
@@ -49,7 +41,7 @@ const products = [
   },
   {
     name: "Munchee Gold Marie",
-    image: "../../assets/Images/gold_marie.jpg",
+    image: "https://i.ibb.co/CWc4K0w/gold-marie.jpg",
     description:
       "150g Munchee Gold Maries biscuits coming from generation to generation provide the taste of classic biscuits.",
     price: 250,
@@ -59,7 +51,7 @@ const products = [
   },
   {
     name: "Marina Refined Cooking Oil",
-    image: "../../assets/Images/marinaOil.jpg",
+    image: "https://i.ibb.co/6NXzBVw/marina-Oil.jpg",
     description:
       "650ml Marina Cooking Oil is an Edible Vegetable Oil manufactured from physically refined Palm Olein which is derived from palm fruit. Marina Cooking Oil is an extremely stable, cost effective deep-frying oil that lasts longer in your fryer, improving end-product yields.",
     price: 450,
@@ -69,7 +61,7 @@ const products = [
   },
   {
     name: "Wijaya Pepper",
-    image: "../../assets/Images/pepper.jpg",
+    image: "https://i.ibb.co/mJ3bzgB/pepper.jpg",
     description:
       "100g Wijaya Pepper gives you the natural flavour of pepper in Sri Lankan cultivations.",
     price: 300,
@@ -79,7 +71,7 @@ const products = [
   },
   {
     name: "Prima Noodles",
-    image: "../../assets/Images/prima_noodles.jpg",
+    image: "https://i.ibb.co/2FwhqQY/prima-noodles.jpg",
     description:
       "400g Prima Noodles Packet. Prima Noodles is the No 1 Instant Noodle product in the Category in Sri Lanka, for its superior taste, quality and nutritional value.",
     price: 350,
@@ -89,7 +81,7 @@ const products = [
   },
   {
     name: "Lanka Soy Soya Meat(Chicken)",
-    image: "../../assets/Images/soya_meat_chickenFlavor.jpg",
+    image: "https://i.ibb.co/YLCV8Md/soya-meat-chicken-Flavor.jpg",
     description:
       "90g Lanka Soy Soya Meat - Chicken Flavor. Enjoy the authentic Sri Lankan taste of a chicken curry. Just add the sachet of spices with chicken flavor, and enjoy.",
     price: 170,
@@ -99,7 +91,7 @@ const products = [
   },
   {
     name: "Sofia Pasta",
-    image: "../../assets/Images/sofia_pasta.jpg",
+    image: "https://i.ibb.co/nCz9YcY/sofia-pasta.jpg",
     description:
       "Sofia pasta is a high quality product and this is a 500g size pack and there is no any artificial colours , flavours or any preservatives.",
     price: 760,
@@ -109,7 +101,7 @@ const products = [
   },
   {
     name: "Lanka Soy Soya Meat(Mutton)",
-    image: "../../assets/Images/soya_meat_mutton.jpg",
+    image: "https://i.ibb.co/R7b8rTN/soya-meat-mutton.jpg",
     description:
       "90g Lanka Soy Soya Meat - Mutton Flavor. This is a Great Family Dish That will Make Your Lunch or Dinner Complete. Includes Sachets of Mutton Food Flavor Spices and Soy Sause.no genetically modified.",
     price: 150,
@@ -119,7 +111,7 @@ const products = [
   },
   {
     name: "Lanka Soy Soya Meat(Regular)",
-    image: "../../assets/Images/soya_meat_regular.jpg",
+    image: "https://i.ibb.co/6H5cw7g/soya-meat-regular.jpg",
     description:
       "90g Lanka Soy Soya Meat - Regular Flavor. Textire or Textured Vegetable Protein, is a defatted soy flour product that is a by-product of soybean oil extraction. Add this delicious curry to your meal and enjoy.",
     price: 160,
@@ -129,7 +121,7 @@ const products = [
   },
   {
     name: "Sunquick",
-    image: "../../assets/Images/sunquick.jpg",
+    image: "https://i.ibb.co/vLHYhxN/sunquick.jpg",
     description:
       "Made with fruit juice and complemented with vitamin C. With its distinct, rich and refreshing taste, each bottle of this premium-quality concentrate contains many glasses, and is the perfect refreshment to be placed at the heart of joyful moments with family and friends.",
     price: 890,
@@ -139,7 +131,7 @@ const products = [
   },
   {
     name: "Watawala Pure Tea",
-    image: "../../assets/Images/watawala_tea.jpg",
+    image: "https://i.ibb.co/TTdmJwn/watawala-tea.jpg",
     description:
       "200g Watawala Pure Ceylon Tea. Enjoy the best refreshing feeling of Sri Lankan tea leaves with a cup of Watawala pure Ceylon tea",
     price: 450,
@@ -149,7 +141,7 @@ const products = [
   },
   {
     name: "White Sugar",
-    image: "../../assets/Images/WhiteSugar.jpg",
+    image: "https://i.ibb.co/kGHT3jX/White-Sugar.jpg",
     description:
       "400g ORIENT White Sugar has the taste of granulated cane sugar. Enjoy it using to add sweetness for your food",
     price: 250,
