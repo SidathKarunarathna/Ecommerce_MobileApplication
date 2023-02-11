@@ -9,6 +9,7 @@ import userRoutes from "./routes/userRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import reviewRoutes from "./routes/reviewRoutes.js";
 import cartRoutes from "./routes/cartRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use("/user", userRoutes);
 app.use("/product", productRoutes);
 app.use("/review", reviewRoutes);
 app.use("/cart", cartRoutes);
+app.use("/order",orderRoutes);
 
 app.listen(8080, () => {
   console.log("server started at port 8080");

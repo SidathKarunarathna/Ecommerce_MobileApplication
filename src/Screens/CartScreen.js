@@ -1,7 +1,7 @@
 import { Box, Button, Center, HStack, ScrollView, Text, } from "native-base"; 
 import React from "react"; 
 import Colors from "../color"; 
-import Buttone from "../Components/Buttone"; 
+import Buttone from "../Components/Profile/Buttone"; 
 import CartEmpty from "../Components/CartEmpty"; 
 import CartIterms from "../Components/CartIterms"; 
 

@@ -1,10 +1,10 @@
-import { View, Text } from "“react-native";
+import { View, Text } from "react-native";
 import React from "react";
 
 import { Box, Center } from "native-base";
 
 import { SwipeListView } from "react-native-swipe-list-view";
-import products from '../data/Products';
+import products from '../data/products.js';
 
 const Swiper = () =>(
 <SwipeListView

@@ -4,7 +4,7 @@ import React from "react";
 import Colors from "../color";
 
 import { FontAwesome } from "@expo/vector-icons";
-import Buttone from "./Buttone";
+import Buttone from "../Components/Profile/Buttone";
 
 const CartEmpty = () => {
 return (
