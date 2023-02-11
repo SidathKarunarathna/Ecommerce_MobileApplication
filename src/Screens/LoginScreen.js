@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Center,
   Heading,
   Image,
   Input,
@@ -8,13 +9,16 @@ import {
   View,
   VStack,
 } from "native-base";
-import React from "react";
+import React, { useState } from "react";
 import Colors from "../color";
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialIcons,AntDesign } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
-import { Pressable } from "react-native";
+import {  Modal,Pressable,StyleSheet } from "react-native";
+
+
 
 function LoginScreen({navigation}) {
+  const [showModel, setShowModel] = useState(false);
   return (
     <Box flex={1} bg={Colors.black}>
       <Image
@@ -78,7 +82,73 @@ function LoginScreen({navigation}) {
           <Text color={Colors.deepestGray}>SIGN UP</Text>
         </Pressable>
       </Box>
+      <Modal
+                animationType="slide"
+                transparent={true}
+                visible={showModel}
+                onRequestClose={() => {
+                    setShowModel(!showModel);
+                }}>
+                
+                <View style={styles.modelview}>
+                    <View style={{ flexDirection: "row" }}>
+                        <Text style={styles.modelText}>ERROR </Text>
+                        <Pressable style={{ alignItems: "flex-end" }} onPress={() => setShowModel(!showModel)}>
+                            <AntDesign name="close" size={24} color="black" />
+                        </Pressable>
+                    </View>
+                    <VStack space={2}>
+                        <Text style={styles.bodyText1}>Email or Password Incorrect</Text>
+                    </VStack>
+                    <Button 
+                    bg={Colors.main}
+                    h={45}
+                    _text={{color:Colors.white}}
+                    onPress={()=> setShowModel(false)}
+                    _pressed={{bg:Colors.red}}
+                    >
+                        OK
+                    </Button>
+                </View>
+            </Modal>
     </Box>
   );
 }
+const styles = StyleSheet.create({
+
+  modelview: {
+      margin:20,
+      backgroundColor: 'white',
+      borderRadius: 20,
+      padding: 35,
+      shadowColor: '#000',
+      shadowOffset: {
+          width: 0,
+          height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 4,
+      elevation: 5,
+      justifyContent: "center",
+      marginTop:100
+     
+
+  },
+  modelText: {
+      marginLeft:0,
+      fontSize: 36,
+      width: "85%",
+      lineHeight: 36
+      
+  },
+  bodyText1:{
+     padding:20,
+     fontSize:16,
+     flex:1,
+     alignItems:Center
+
+  },
+  
+
+});
 export default LoginScreen;
