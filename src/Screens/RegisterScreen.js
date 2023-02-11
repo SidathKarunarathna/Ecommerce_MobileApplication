@@ -24,7 +24,7 @@ function RegisterScreen({ navigation }) {
   const handleSubmit = () => {
     console.log(JSON.stringify({ name, email, password }))
     // To handle user requests
-    fetch("http://192.168.8.247:5000/user/sign-up", {
+    fetch("http://192.168.8.198:5000/user/sign-up", {
       method: "POST", headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
@@ -33,6 +33,10 @@ function RegisterScreen({ navigation }) {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
+        if(data.message == "success"){
+          navigation.navigate("Login");
+        }
         
       })
       .catch((e) => {

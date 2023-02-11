@@ -24,8 +24,8 @@ app.use("/review", reviewRoutes);
 app.use("/cart", cartRoutes);
 app.use("/order",orderRoutes);
 
-app.listen(8080, () => {
-  console.log("server started at port 8080");
+app.listen(5000, () => {
+  console.log("server started at port 5000");
 });
 
 mongoose
