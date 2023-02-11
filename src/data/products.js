@@ -1,5 +1,6 @@
 const products = [
   {
+    
     name: "Brown Sugar",
     image: "../../assets/Images/BrownSugar.png",
     description:
@@ -28,10 +29,9 @@ const products = [
     countInStock: 15,
     rating: 3,
     numReviews: 6,
-
-    _id: "2",
+  },{
     name: "Brown Sugar",
-    image: require("../../assets/Images/BrownSugar.png"),
+    image: "../../assets/Images/BrownSugar.png",
     description: "Lorem Ipsum....",
     price: 700,
     countInStock: 5,
@@ -39,9 +39,8 @@ const products = [
     numReviews: 10,
   },
   {
-    _id: "3",
     name: "Munchee Super Cream Cracker",
-    image: require("../../assets/Images/CreamCracker.jpeg"),
+    image: "../../assets/Images/CreamCracker.jpeg",
     description: "Lorem Ipsum....",
     price: 480,
     countInStock: 0,

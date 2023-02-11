@@ -134,7 +134,7 @@ function LoginScreen({ navigation }) {
       >
         <View style={styles.modelview}>
           <View style={{ flexDirection: "row" }}>
-            <Text style={styles.modelText}>ERROR </Text>
+            <Text style={styles.modelText}>Email or Password Incorrect </Text>
             <Pressable
               style={{ alignItems: "flex-end" }}
               onPress={() => setShowModel(!showModel)}
@@ -146,11 +146,11 @@ function LoginScreen({ navigation }) {
             <Text style={styles.bodyText1}>Email or Password Incorrect</Text>
           </VStack>
           <Button
-            bg={Colors.main}
+            bg={Colors.red}
             h={45}
             _text={{ color: Colors.white }}
             onPress={() => setShowModel(false)}
-            _pressed={{ bg: Colors.red }}
+            _pressed={{ bg: Colors.white }}
           >
             OK
           </Button>
@@ -174,11 +174,11 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
     justifyContent: "center",
-    marginTop: 100,
+    marginTop: 200,
   },
   modelText: {
     marginLeft: 0,
-    fontSize: 36,
+    fontSize: 16,
     width: "85%",
     lineHeight: 36,
   },

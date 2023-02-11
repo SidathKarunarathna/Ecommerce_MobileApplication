@@ -45,11 +45,15 @@ export const signIn = async (req, res) => {
         });
       } else {
         res.status(400).json({
-          message: "Invalid Credentials",
+          message: "Invalid Password",
         });
       }
+    } else {
+      res.status(400).json({
+        message: "Invalid Credentials",
+      });
     }
   } catch (error) {
     res.status(400).send(error);
-  }
+  }
 };
