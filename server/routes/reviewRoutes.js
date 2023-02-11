@@ -1,5 +1,5 @@
 import express from "express";
-import { signUp, signIn } from "../controllers/userController.js";
+import { addReview, getReview } from "../controllers/reviewController.js";
 
 const router = express.Router();
 
@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post("/sign-up", signUp);
-router.post("/sign-in", signIn);
+router.post("/addReview", addReview);
+router.post("/getReviews", getReview);
 
 export default router;
