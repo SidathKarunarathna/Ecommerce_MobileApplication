@@ -34,7 +34,6 @@ function LoginScreen({ navigation }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setData(data);
         if(data.message == "Success"){
           navigation.navigate("Bottom");

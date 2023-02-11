@@ -18,7 +18,6 @@ function HomeProducts() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data); 
         setProduct(data.products);
       })
       .catch((e) => {

@@ -22,6 +22,8 @@ function SingleProductScreen({route}) {
   const [value, setValue] = useState(0);
   const navigation = useNavigation()
   const product = route.params
+
+  
   return (
     <Box safeArea flex={1} bg={Colors.white}>
       <ScrollView px={5} showsVerticalScrollIndicator={false}>

@@ -33,7 +33,6 @@ function RegisterScreen({ navigation }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if(data.message == "success"){
           navigation.navigate("Login");
         }
