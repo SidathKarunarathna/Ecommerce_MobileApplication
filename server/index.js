@@ -6,6 +6,9 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 
 import userRoutes from "./routes/userRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
+import reviewRoutes from "./routes/reviewRoutes.js";
+import cartRoutes from "./routes/cartRoutes.js";
 
 dotenv.config();
 
@@ -15,6 +18,9 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/user", userRoutes);
+app.use("/product", productRoutes);
+app.use("/review", reviewRoutes);
+app.use("/cart", cartRoutes);
 
 app.listen(8080, () => {
   console.log("server started at port 8080");
