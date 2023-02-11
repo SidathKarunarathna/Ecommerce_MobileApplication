@@ -8,13 +8,41 @@ import {
   View,
   VStack,
 } from "native-base";
-import React from "react";
+import React, { useState } from "react";
 import Colors from "../color";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { Pressable } from "react-native";
 
-function RegisterScreen() {
+function RegisterScreen({ navigation }) {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [data, setData] = useState()
+  const [error, setError] = useState(null);
+
+  const handleSubmit = () => {
+    console.log(JSON.stringify({ name, email, password }))
+    // To handle user requests
+    fetch("http://192.168.8.247:5000/user/sign-up", {
+      method: "POST", headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }, //POST data
+      body: JSON.stringify({ name, email, password }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        
+      })
+      .catch((e) => {
+        console.log(e)
+        setError(e);
+      })
+      .finally(() => {
+      });
+  };
+
   return (
     <Box flex={1} bg={Colors.black}>
       <Image
@@ -46,7 +74,9 @@ function RegisterScreen() {
             w="70%"
             pl={2}
             color={Colors.main}
-            borderBottomColor={Colors.underline} //
+            borderBottomColor={Colors.underline}
+            value={name}
+            onChangeText={(value) => setName(value)}
           />
           {/*EMAIL*/}
           <Input
@@ -60,6 +90,8 @@ function RegisterScreen() {
             pl={2}
             color={Colors.main}
             borderBottomColor={Colors.underline}
+            value={email}
+            onChangeText={(value) => setEmail(value)}
           />
           {/*PASSWORD*/}
           <Input
@@ -74,6 +106,8 @@ function RegisterScreen() {
             type="password"
             color={Colors.main}
             borderBottomColor={Colors.underline} //
+            value={password}
+            onChangeText={(value) => setPassword(value)}
           />
         </VStack>
         <Button
@@ -84,12 +118,14 @@ function RegisterScreen() {
           w="40%"
           rounded={50}
           bg={Colors.main}
+          onPress={handleSubmit}
         >
           SIGN UP
         </Button>
-        <Pressable mt={4}>
+        <Pressable mt={4} onPress={() => navigation.navigate("Login")}>
           <Text color={Colors.deepestGray}>LOGIN</Text>
         </Pressable>
+
       </Box>
     </Box>
   );

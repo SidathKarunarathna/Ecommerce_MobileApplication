@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { Box, Flex, Heading, Image, ScrollView, Text,Pressable } from "native-base";
 import React from "react";
 import Colors from "../../color";
@@ -5,6 +6,7 @@ import products from "../../data/products"
 import Rating from "../Home/Rating";
 
 function HomeProducts() {
+  const navigation = useNavigation()
   return (
     <ScrollView flex={1} showsVerticalScrollIndicator={false}>
       <Flex
@@ -16,6 +18,7 @@ function HomeProducts() {
         {products.map((product,index) => {
           return(
           <Pressable
+          onPress={()=> navigation.navigate("Single",product)}
             key={index}
             w="47%"
             bg={Colors.white}
