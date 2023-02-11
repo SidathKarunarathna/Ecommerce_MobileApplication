@@ -26,13 +26,13 @@ export default function Review() {
       {/* empty review */}
       <Message
         color={Colors.main}
-        bg={Colors.deepGray}
+        bg={Colors.subGreen}
         // size={10}
         bold
         children={"No Review"}
       />
       {/* has review */}
-      <Box p={3} bg={Colors.deepGray} mt={5} rounded={5}>
+      <Box p={3} bg={Colors.subGreen} mt={5} rounded={5}>
         <Heading fontSize={15} color={Colors.black}>
           Kosala Chamithri
         </Heading>
@@ -55,15 +55,14 @@ export default function Review() {
           REVIEW THIS PRODUCT
         </Heading>
         <VStack space={6}>
-          {/* <FormControl>
-            <FormControl.Label
+            <Text
               _text={{
                 fontSize: "12px",
                 fontWeight: "bold",
               }}
             >
               Rating
-            </FormControl.Label>
+            </Text>
             <Select
               bg={Colors.subGreen}
               borderWidth={0}
@@ -81,16 +80,14 @@ export default function Review() {
               <Select.Item label="Fair" value="2" />
               <Select.Item label="Good" value="3" />
             </Select>
-          </FormControl> */}
-          <FormControl>
-            <FormControl.Label
+            <Text
               _text={{
                 fontSize: "12px",
                 fontWeight: "bold",
               }}
             >
               Comment
-            </FormControl.Label>
+            </Text>
             <TextArea
               h={24}
               w="full"
@@ -102,8 +99,7 @@ export default function Review() {
                 bg: Colors.subGreen,
               }}
             />
-          </FormControl>
-          <Buttone bg={Colors.main} color={Colors.white}>
+          <Buttone bg={Colors.main} color={Colors.white}> 
             SUBMIT
           </Buttone>
           {/* if not logged in */}
