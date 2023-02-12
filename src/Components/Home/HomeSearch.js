@@ -8,14 +8,13 @@ import Colors from "../../color";
 function HomeSearch({product,setProduct}) {
 
   const HandleSearch =(event)=> {
+    let eventText=event;
     let filteredProducts= []
-    console.log(product.filter(event=>{
-      product.map((product)=>{
-        if(product.name===event){
-          console.log(product); 
-        }
-      })
-    }))
+    product.map((product)=>{
+      if(product.name.toLowerCase().match(eventText.toLowerCase())){
+        console.log(product); 
+      }
+    })
   }
   const navigation = useNavigation()
   return (
