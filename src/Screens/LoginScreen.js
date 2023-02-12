@@ -38,17 +38,10 @@ function LoginScreen({ navigation }) {
         setData(data);
         console.log(data.user);
         if(data.message == "Success"){
-          AsyncStorage.setItem("User",JSON.stringify(data.user));
-          console.log(AsyncStorage.getItem("User"));
           navigation.navigate("Bottom");
-
         }
         if(data.message == "Invalid Credentials"){
           setShowModel(true);
-        }
-        else{
-          
-          
         }
         
       })

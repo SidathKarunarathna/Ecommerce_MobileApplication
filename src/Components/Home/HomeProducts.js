@@ -4,29 +4,8 @@ import React,{useState,useEffect} from "react";
 import Colors from "../../color";
 import Rating from "../Home/Rating";
 
-function HomeProducts() {
-  const [product, setProduct] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(()=>{
-    fetch("http://192.168.8.198:5000/product/getProducts",{
-      method:"POST",
-      headers:{
-        "Content-type":"application/json"
-      },
-      body:JSON.stringify({})
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setProduct(data.products);
-      })
-      .catch((e) => {
-        console.log(e)
-        setError(e);
-      })
-      .finally(() => {
-      });
-  },[])
+function HomeProducts({product}) {
+  
 
   const navigation = useNavigation()
   return (

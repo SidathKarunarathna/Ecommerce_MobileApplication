@@ -5,7 +5,18 @@ import React from "react";
 import { Pressable } from "react-native";
 import Colors from "../../color";
 
-function HomeSearch() {
+function HomeSearch({product,setProduct}) {
+
+  const HandleSearch =(event)=> {
+    let filteredProducts= []
+    console.log(product.filter(event=>{
+      product.map((product)=>{
+        if(product.name===event){
+          console.log(product); 
+        }
+      })
+    }))
+  }
   const navigation = useNavigation()
   return (
     <HStack
@@ -28,6 +39,7 @@ function HomeSearch() {
         _focus={{
           bg: Colors.white,
         }}
+        onChangeText={HandleSearch}
       />
       <Pressable ml={3}  onPress={()=> navigation.navigate("Cart")}>
         <FontAwesome5 name="shopping-basket" size={24} color={Colors.white} />
