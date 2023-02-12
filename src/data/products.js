@@ -2,7 +2,7 @@ const products = [
   {
     
     name: "Brown Sugar",
-    image: "../../assets/Images/BrownSugar.png",
+    image: "https://i.ibb.co/ZL9d5JS/Brown-Sugar.png",
     description:
       "REFINED BROWN SUGAR IC 800/1200 (EU BEET SUGAR), Brown sugar is granulated cane sugar with added molasses. It is coarser and more moist than white sugar and imparts a unique flavor and dark color to food systems. Imported from THAILAND. ",
     price: 250,
@@ -12,7 +12,7 @@ const products = [
   },
   {
     name: "Araliya Naadu Rice",
-    image: "../../assets/Images/araliya_naadu_rice.jpg",
+    image: "https://i.ibb.co/G5Ct94H/araliya-naadu-rice.jpg",
     description:
       "10Kg Rice Packet. Araliya Naadu Sahal cultivated in upcountry are Low in Sodium provides vitamin B1 to the human body,Boosts the immune system and Prevents Obesity.",
     price: 2200,

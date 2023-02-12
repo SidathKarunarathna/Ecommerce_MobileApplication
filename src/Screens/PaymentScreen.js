@@ -1,5 +1,5 @@
 import React from "react";
-import { Box,Center,FormControl,ScrollView,Text, VStack} from "native-base";
+import { Box,Center,FormControl,ScrollView,Text, VStack,Image} from "native-base";
 import Colors from "../color";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import Buttone from "../Components/Profile/Buttone";
@@ -29,7 +29,7 @@ const paymentMethodes=[
 ]
 
 
-function PaymentScreen() {
+function PaymentScreen({navigation}) {
   return (
 
     <Box flex={1} safeAreaTop bg={Colors.main} py={5}>
@@ -62,7 +62,7 @@ function PaymentScreen() {
                                     
             )}
 
-            <Buttone bg={Colors.main} color={Colors.white} mt={5}>
+            <Buttone onPress={()=> navigation.navigate("PlaceOrder")} bg={Colors.main} color={Colors.white} mt={5}>
               CONTINUE
             </Buttone>
 

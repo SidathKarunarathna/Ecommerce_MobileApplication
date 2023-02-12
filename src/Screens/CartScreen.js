@@ -2,10 +2,10 @@ import { Box, Button, Center, HStack, ScrollView, Text, } from "native-base";
 import React from "react"; 
 import Colors from "../color"; 
 import Buttone from "../Components/Profile/Buttone"; 
-import CartEmpty from "../Components/CartEmpty"; 
+//import CartEmpty from "../Components/CartEmpty"; 
 import CartIterms from "../Components/CartIterms"; 
 
-function CartScreen(){ 
+function CartScreen({navigation}){ 
   return(
   <Box flex={1} safeAreaTop bg={Colors.subGreen}> 
   {/* Header */} 
@@ -19,7 +19,7 @@ function CartScreen(){
 
   <ScrollView 
   showsVerticalScrollIndicator ={false}> 
-  <CartIterms/> {/* buttons */} 
+  <CartIterms/>  
   <Center mt={5}> 
   <HStack rounded={50} justifyContent="space-between" bg={Colors.white} shadow={2} w="90%" pl={5} h={45} alignItems="center">
           <Text>Total</Text> 
@@ -39,9 +39,9 @@ function CartScreen(){
              </Center>
 
              <Center px={5}>
-              <Button bg={Colors.black} color={Colors.white} mt={10}>  
+              <Buttone onPress={()=> navigation.navigate("Shipping")} bg={Colors.black} color={Colors.white} mt={10}>  
                 CHECKOUT
-                </Button>
+                </Buttone>
              </Center>
 
 

@@ -25,6 +25,8 @@ function SingleProductScreen({route}) {
   const productId= product._id;
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
+  const [email, setEmail] = useState("")
+  const [quantity, setQuantity] = useState("")
 
   useEffect(()=>{
     fetch("http://192.168.8.198:5000/product/getOneProduct",{
@@ -45,6 +47,31 @@ function SingleProductScreen({route}) {
       .finally(() => {
       });
   },[])
+
+  const handleSubmit = () => {
+    // To handle user requests
+    fetch("http://192.168.8.198:5000/user/sign-up", {
+      method: "POST", headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }, //POST data
+      body: JSON.stringify({ name, email, password }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if(data.message == "success"){
+          navigation.navigate("Login");
+        }
+        
+      })
+      .catch((e) => {
+        console.log(e)
+        setError(e);
+      })
+      .finally(() => {
+      });
+  };
+
   return (
     <Box safeArea flex={1} bg={Colors.white}>
       <ScrollView px={5} showsVerticalScrollIndicator={false}>

@@ -1,6 +1,7 @@
 import React from "react";
-import { Box,Center,FormControl,ScrollView,Text, VStack} from "native-base";
+import { Box,Center,FormControl,ScrollView,Text, VStack,Input} from "native-base";
 import Colors from "../color";
+import Buttone from "../Components/Profile/Buttone";
 
 
 const ShippingInputs=[
@@ -23,7 +24,7 @@ const ShippingInputs=[
 ]
 
 
-function ShippingScreen() {
+function ShippingScreen({navigation}) {
   return (
     <Box flex={1} safeAreaTop bg={Colors.main} py={5}>
       <Center pb={15}>
@@ -60,7 +61,7 @@ function ShippingScreen() {
             </FormControl>
             ))}
 
-            <Buttone bg={Colors.main} color={Colors.white} mt={5}>
+            <Buttone onPress={()=> navigation.navigate("Checkout")} bg={Colors.main} color={Colors.white} mt={5}>
               CONTINUE
             </Buttone>
             

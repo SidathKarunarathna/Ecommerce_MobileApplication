@@ -7,7 +7,9 @@ import { FontAwesome } from "@expo/vector-icons";
 import Buttone from "../Components/Profile/Buttone";
 
 const CartEmpty = () => {
+  console.log("cartEmplty");
 return (
+  
 <Box flex={1} px={4}>
   <Center h="90%">
      <Center w={200} h={200} bg={Colors.white} rounded='full'>

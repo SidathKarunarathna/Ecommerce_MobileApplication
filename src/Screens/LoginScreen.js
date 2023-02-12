@@ -14,6 +14,7 @@ import Colors from "../color";
 import { MaterialIcons, AntDesign } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { Modal, Pressable, StyleSheet } from "react-native";
+import { AsyncStorage } from 'react-native'
 
 function LoginScreen({ navigation }) {
   const [showModel, setShowModel] = useState(false);
@@ -35,11 +36,14 @@ function LoginScreen({ navigation }) {
       .then((res) => res.json())
       .then((data) => {
         setData(data);
+        console.log(data.user);
         if(data.message == "Success"){
+          AsyncStorage.setItem("User",JSON.stringify(data.user));
+          console.log(AsyncStorage.getItem("User"));
           navigation.navigate("Bottom");
+
         }
         if(data.message == "Invalid Credentials"){
-          console.log("awe ne");
           setShowModel(true);
         }
         else{
