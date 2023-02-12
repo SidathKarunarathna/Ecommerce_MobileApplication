@@ -22,7 +22,7 @@ const OrderItem = () => {
                                 w="25%"
                                 bg={Colors.deepGray}>
                                 <Image
-                                    source={item.image}
+                                    source={{uri:item.image}}
                                     alt={item.name}
                                     w="full"
                                     h={24}

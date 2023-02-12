@@ -1,11 +1,13 @@
-import { Box, Flex, Heading, Image, ScrollView, Text } from "native-base";
-import React from "react";
-import { Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { Box, Flex, Heading, Image, ScrollView, Text,Pressable } from "native-base";
+import React,{useState,useEffect} from "react";
 import Colors from "../../color";
-import products from "../../data/Products";
 import Rating from "../Home/Rating";
 
-function HomeProducts() {
+function HomeProducts({product}) {
+  
+
+  const navigation = useNavigation()
   return (
     <ScrollView flex={1} showsVerticalScrollIndicator={false}>
       <Flex
@@ -14,9 +16,11 @@ function HomeProducts() {
         justifyContent="space-between"
         px={6}
       >
-        {products.map((product) => {
+        {product.map((item,index) => {
+          return(
           <Pressable
-            key={product._id}
+          onPress={()=> navigation.navigate("Single",item)}
+            key={index}
             w="47%"
             bg={Colors.white}
             rounded="md"
@@ -26,28 +30,27 @@ function HomeProducts() {
             pb={2}
             overflow="hidden"
           >
-            ;
-            {
+            
               <Image
-                source={{ uri: product.image }}
-                alt={product.name}
+                source={{uri:item.image}}
+                alt={item.name}
                 w="full"
                 h={24}
                 resizeMode="contain"
               />
-            }
+            
             <Box px={4} pt={1}>
               <Heading size="sm" bold>
-                Rs.{product.price}
+                Rs.{item.price}
               </Heading>
               <Text fontSize={10} mt={1} isTruncated w="full">
-                {product.name}
+                {item.name}
               </Text>
               {/* rating */}
-              <Rating value={product.rating} />
+              <Rating value={item.rating} />
             </Box>
-          </Pressable>;
-        })}
+          </Pressable>
+        );})}
       </Flex>
     </ScrollView>
   );
